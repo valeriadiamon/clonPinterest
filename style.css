@@ -1,0 +1,142 @@
+#navbar-pinterest{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+    width: 100%;
+}
+#pinterest-icon{
+    width: 2rem;
+}
+.ico{
+ width: 1.5rem;   
+}
+.finder{
+    flex-grow: 2;
+}
+.finder{
+    outline: none;
+    border-radius: 2rem;
+    border: 0 rgb(172, 168, 168);
+    padding: 0.5rem 2rem;
+    background-color: rgb(234, 234, 234);
+}
+.active{
+    padding: 0.5rem;
+    border-radius: 2rem;
+    background-color: black;
+    color: white;
+}
+#profile-img{
+    border-radius: 2rem;
+}
+a{
+    text-decoration: none;
+}
+#content{
+    /*display: grid;
+    grid-template-rows: masonry;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;*/
+    position: absolute;
+    margin-top: 5rem;
+    column-count: 4;
+    column-gap: 10px;
+}
+.card-image{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin: 0 0 1rem 1rem;
+    break-inside: avoid;
+    position: relative;
+}
+.card-image > img{
+    /*width: 12rem;*/
+    max-width: 100%;
+    display: block;
+    grid-row: 1 / -1;
+    grid-column: 1;
+    border-radius: 1rem;
+}
+.card-image:hover > img{
+    filter: brightness(50%);
+}
+/*.card-image:hover .card-title{
+    position: absolute;
+    top: 0px;
+}
+.card-image:hover .card-ico{
+    position: absolute;
+    top: 0;
+}*/
+.info{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 90%;
+    margin-left: 1rem;
+}
+.card-image:hover .info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+.info > p{
+    color: white;
+}
+.save{
+    background-color: red;
+    padding: 0.8rem;
+    border-radius: 2rem;
+}
+.card-desc{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+.card-image:hover .card-desc{
+    display: inline-block;
+}
+.card-bottom {
+    background-color: rgba(240,255,255,0.7);
+    border-radius: 100%;
+    padding: 0.2rem;
+    margin: 0 1rem 0.5rem 0;
+}
+@media screen and (max-width:880px) {
+    #content{
+        column-count: 3;
+    }
+    #navbar-pinterest a{
+        display: none;
+    }
+    #navbar-pinterest a:nth-child(1){
+        display:inline-block;
+    }
+    .finder{
+        width: 8rem;
+    }
+    #navbar-pinterest i{
+        display: none;
+    }
+    #navbar-pinterest i:nth-of-type(1), #navbar-pinterest i:nth-of-type(5){
+        display: inline-block;
+    }
+}
+@media screen and (max-width:720px) {
+    #content{
+        column-count: 2;
+    }
+}
+@media screen and (max-width:480px) {
+    #content{
+        column-count: 1;
+    }
+}
